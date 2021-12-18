@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import request
+import joblib
 import pickle
 import pandas as pd
 import json
@@ -14,7 +15,7 @@ def predict():
     df = pd.DataFrame.from_dict(d, orient='index').T
     df.iloc[:, [0, 5, 9, 10, 11, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 34, 35, 36, 37, 38, 39, 40, 41]] = df.iloc[:, [0, 5, 9, 10, 11, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 34, 35, 36, 37, 38, 39, 40, 41]].astype('int')
     df.iloc[:, [6, 7, 8, 17, 30, 31, 32, 33]] = df.iloc[:, [6, 7, 8, 17, 30, 31, 32, 33]].astype('float')
-    model = pickle.load(open('../models/catboost.pkt', 'rb'))
+    model = joblib.load('../models/catboost1.pkt')
     return str(model.predict(df)[0])
 
 
