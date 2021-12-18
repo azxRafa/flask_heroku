@@ -1,0 +1,10 @@
+flask
+gunicorn
+dash
+bentoml
+scikit-learn
+catboost
+pandas
+matplotlib
+rq
+bentoml
