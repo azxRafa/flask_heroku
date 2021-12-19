@@ -37,7 +37,8 @@ def predict_model2():
     df.iloc[:, [0, 5, 9, 10, 11, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 34, 35, 36, 37, 38, 39, 40, 41]] = df.iloc[:, [0, 5, 9, 10, 11, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 34, 35, 36, 37, 38, 39, 40, 41]].astype('int')
     df.iloc[:, [6, 7, 8, 17, 30, 31, 32, 33]] = df.iloc[:, [6, 7, 8, 17, 30, 31, 32, 33]].astype('float')
     df = df.drop(df.iloc[:, 1:5], axis=1)
-    model = pickle.load(open('../models/logistic.pkt', 'rb'))
+    # model = pickle.load(open('../models/logistic.pkt', 'rb'))
+    model = pickle.load(open('./models/logistic.pkt', 'rb'))
     return str(model.predict(df)[0])
 
-#app.run()
+# app.run()
