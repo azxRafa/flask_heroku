@@ -1,1 +1,1 @@
-GET http://127.0.0.1:5000/api/model
+GET https://practicum-elect.herokuapp.com//api/model
